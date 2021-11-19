@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Elastic Rule Selector</title>
+    <title>Browser Extension Experiments</title>
     <script src="popup.js"></script>
     <style>
       body {
@@ -9,22 +9,23 @@
       }
 
       button {
-        border-radius: 5px;
+        border-style: groove;
+        border-radius: 3px;
         width:  100%;
         margin: auto auto;
         color:  #ffffff;
-        background-color: #000099;
+        background-color: #2bb159;
       }
 
       button:hover {
-        background-color: #990000;
+        background-color: #0a8143;
       }
     </style>
   </head>
   <body>
-    <h1>Elastic Rule Selector</h1>
-    <button id="createNewList">Create new Rule List</button>
-    <button id="addRuleToList">Add rule to current Rule List</button>
-    <button id="exportRuleList">Export Rule List to CSV</button>
+    <h1 class="standard-header">Browser Experiments</h1>
+    <button id="askToConfirm" class="action-button">Ask for Confirmation</button>
+    <button id="messWithStyle" class="action-button">Mess With Page Style</button>
+    <button id="downloadScriptsCSV">Download Page Scripts CSV</button>
   </body>
 </html>

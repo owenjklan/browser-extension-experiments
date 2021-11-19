@@ -8,7 +8,7 @@
     "content_scripts": [
         {
             "matches": [
-                "https://*.ap-southeast-2.aws.found.io:9243/app/security/rules/id/*"
+                "https://*/*"
             ],
             "run_at": "document_end",
             "js": ["content.js"]
@@ -25,8 +25,8 @@
     ],
 
     "browser_action": {
-        "default_title": "Construct lists of rules for ERT.",
-        "default_icon": "images/eg.png",
+        "default_title": "Browser extension experiments",
+        "default_icon": "images/test-tubes-48.png",
         "default_popup": "popup.html"
     }
 }
