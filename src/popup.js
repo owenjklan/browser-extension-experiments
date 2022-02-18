@@ -3,6 +3,8 @@ function createButtonClicked() {
         "code": "CREATE_NEW_LIST",
     }
     sendMessageToActiveTabs(message);
+
+    alert("Yo");
 }
 
 function addRuleButtonClicked() {
@@ -21,11 +23,11 @@ function exportButtonClicked() {
 
 // Once DOM finishes loading, start running our JS
 document.addEventListener('DOMContentLoaded', function() {
-    const createButton = document.getElementById('createNewList');
-    const addRuleButton = document.getElementById('addRuleToList');
-    const exportButton = document.getElementById('exportRuleList');
+        const createButton = document.getElementById('askToConfirm');
+        const addRuleButton = document.getElementById('messWithStyle');
+        const exportButton = document.getElementById('downloadScriptsCSV');
 
-    createButton.addEventListener('click', createButtonClicked, false);
+        createButton.addEventListener('click', createButtonClicked, false);
         addRuleButton.addEventListener('click', addRuleButtonClicked, false);
         exportButton.addEventListener('click', exportButtonClicked, false);
     }, false);
@@ -36,8 +38,8 @@ function sendMessageToActiveTabs(message) {
     chrome.tabs.query(query, function (tabs) {
         console.log("Sending message... " + message.code);
         let targetTab = tabs[0].id;
-        console.log("Target tab ID: " + targetTab);
-        console.log("      Tab URL: " + tabs[0].url);
+        // console.log("Target tab ID: " + targetTab);
+        // console.log("      Tab URL: " + tabs[0].url);
 
         chrome.tabs.sendMessage(tabs[0].id, {"code": "ADD_RULE_TO_CSV"});
     });
